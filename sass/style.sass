@@ -1,0 +1,208 @@
+=placeholder-color($color) 
+    input::-webkit-input-placeholder
+        color: $color
+
+    ::-moz-placeholder 
+        color: $color
+
+    :-ms-input-placeholder 
+        color: $color
+
+    ::-webkit-input-placeholder 
+        color: $color
+
+    ::placeholder 
+        color: $color
+    
+$orange: #f37820
+$white100: rgba(255,255,255,1)
+$white75: rgba(255,255,255,0.75)
+$white50: rgba(255,255,255,0.5)
+$white25: rgba(255,255,255,0.25)
+$white15: rgba(255,255,255,0.15)
+$black: #000
+$black50: rgba(0,0,0,0.5)
+
+$main_font: 'Montserrat', sans-serif 
+
+.clear
+    clear: both
+
+.active
+    opacity: 1!important
+
+body
+    background-color: $black
+    font-family: $main_font
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+header
+    width: 100%
+    height: 32px
+    text-align: center
+
+.logo-wraper
+    display: block
+    float: left
+    margin-top: 32px
+    margin-left: 32px
+    cursor: pointer
+
+form.input-wraper
+    display: inline-block
+    border-radius: 16px
+    border: none
+    margin-top: 32px
+
+    input
+        display: inline-block
+        background-color: $white15
+        color: $white75
+        height: 32px
+        width: 288px
+        border-radius: 16px
+        border: none
+        margin-bottom: 4px
+        padding: 4px 16px
+        font-size: 12px
+        font-weight: 500
+        line-height: 1.33
+        +placeholder-color($white75)
+        transition: background-color 0.25s ease-in-out
+
+
+    input:focus
+        outline: none
+        background-color: $white25
+
+    input:hover
+        background-color: $white25
+
+a.svg-wraper
+    display: inline-block
+    cursor: pointer
+    position: relative
+    right: 32px
+    top: 8px
+
+    object.ic-search
+        display: block
+        float: right
+        pointer-events: none
+        opacity: 0.5
+        transition: opacity 0.25s ease-in-out
+
+.user
+    display: block
+    width: 164px
+    height: 32px
+    float: right
+    margin-right: 32px
+    margin-top: 32px
+
+    .user-wraper
+        width: 32px
+        height: 32px
+        background-color: $white100
+        border-radius: 16px
+        float: left
+
+        img
+            width: 32px
+            height: 32px
+            border-radius: 16px
+            float: left
+
+    .username
+        display: inline-block
+        width: 124px
+        height: 15px
+        color: $white75
+        float: left
+        font-size: 12px
+        font-weight: 500
+        vertical-align: top
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25)
+
+main
+
+    margin-top: 96px
+
+    .search-title
+        display: inline-block
+        width: 102px
+        height: 24px
+        color: $white50
+        text-shadow: 0 2px 4px var(--black-50)
+        font-family: Montserrat
+        font-size: 20px
+        font-weight: 600
+        margin-left: 1%
+        margin-bottom: 16px
+
+    section
+        position: relative
+        width: 100%
+        text-align: center
+
+        .movie-wraper
+            position: relative
+            display: inline-block
+            width: 156px
+            height: 234px
+            margin: 0 2%
+            margin-bottom: 24px
+
+            img
+                float: left
+                width: 100%
+                height: 100%
+            
+            .movie-mask
+                cursor: pointer
+                opacity: 0.01
+                width: 124px
+                height: 151px
+                padding: 44px 16px 39px
+                position: absolute
+                background-color: $black50
+                z-index: 99
+                transition: opacity 0.25s ease-in-out
+
+                &:hover
+                    opacity: 1
+
+                p
+                    position: absolute
+                    text-shadow: 0 2px 4px var(--black-50)
+                    font-size: 12px
+                    font-weight: 500
+                    color: $white100
+
+                .text-wraper
+                    position: relative
+                    height: 90%
+                    text-align: left
+
+                    .text-spacing
+                        min-height: 16px
+                        height: 88px
+                    h2
+                        text-shadow: 0 2px 4px var(--black-50)
+                        font-size: 16px
+                        font-weight: bold
+                        line-height: 1.25
+                        color: $white100
+                        position: absolute
+                        bottom: -16px
+
+@media screen and (max-width: 580px)
+    main section .movie-wraper
+        width: 108px
+        height: 162px
+        margin: 0 1%
+
+        .movie-mask
+                display: none
